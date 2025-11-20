@@ -18,9 +18,9 @@ app.get("/", (req, res)=>{
     res.status(200).json({success:true, message: "server is live"})
 })
 app.use(notfound)
-// app.get("/test", auth, (req, res)=>{
-//     res.send("passed authenticatiom")
-// })
+app.get("/test", auth, (req, res)=>{
+    res.send("passed authenticatiom")
+})
 const start = async()=>{
     try {
         await mongoose.connect(process.env.MONGO_URI)
